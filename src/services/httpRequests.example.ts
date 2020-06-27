@@ -96,3 +96,13 @@ export async function getAlarmHistory(): Promise<object | string> {
     return 'Error';
   }
 }
+
+export async function clearAlarmHistory(): Promise<string | null> {
+  try {
+    const { data } = await api.delete('/B84A50C788CD230FC1F312B5Fhistory.json');
+
+    return data;
+  } catch {
+    return 'Error';
+  }
+}
